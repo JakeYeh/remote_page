@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Goods List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1 {
+            color: #333;
+            margin-top: 20px;
+        }
+        
+        .frame {
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+            display: inline-block;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .frame img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        p {
+            margin-top: 10px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Goods List</h1>
+    <div id="goodsList"></div>
+    <p>Welcome to our goods list! Swipe or scroll through the frames to explore our offerings and find the perfect goods for your needs.</p>
+
+    <script>
+        const goodsData = [
+            { imgSrc: 'a1.jpg', intro: 'Introduction for Goods A1.' },
+            { imgSrc: 'a2.jpg', intro: 'Introduction for Goods A2.' },
+            { imgSrc: 'a3.jpg', intro: 'Introduction for Goods A3.' },
+            { imgSrc: 'a4.jpg', intro: 'Introduction for Goods A4.' },
+            { imgSrc: 'a5.jpg', intro: 'Introduction for Goods A5.' },
+            { imgSrc: 'a6.jpg', intro: 'Introduction for Goods A6.' }
+        ];
+
+        const goodsListContainer = document.getElementById('goodsList');
+
+        goodsData.forEach(good => {
+            const frame = document.createElement('div');
+            frame.className = 'frame';
+
+            const img = document.createElement('img');
+            img.src = good.imgSrc;
+            img.alt = 'Goods Image';
+
+            const intro = document.createElement('p');
+            intro.textContent = good.intro;
+
+            frame.appendChild(img);
+            frame.appendChild(intro);
+            goodsListContainer.appendChild(frame);
+        });
+    </script>
+</body>
+</html>
